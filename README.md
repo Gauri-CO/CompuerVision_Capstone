@@ -38,7 +38,7 @@ Videos Counters
 
 **Project Overview**
 
-This Project is cloud based implementation of DataPipeline for an AI-based object detection and tracking framework for Video counters using Python, Deep Learning and OpenCV, by leveraging CCTV footage of a store.
+This Project is a cloud based implementation of DataPipeline for an AI-based object detection and tracking framework for Video counters using Python, Deep Learning and OpenCV, by leveraging CCTV footage of a store.
 
 
 
