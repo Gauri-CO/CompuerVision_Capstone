@@ -1,0 +1,7 @@
+- annotatedfiles: annotatedfiles
+  avi_file_pattern: ^VIRAT[_]S[_]\d{6}[_]\d{2}[_]\d{6}[_]\d{6}[_]\d{8}[\.]avi$
+  azure_storage_connectionstring: DefaultEndpointsProtocol=https;AccountName=retailanalytics08;AccountKey=Vk+/9Z9quDj3p1cY1AIaZ4GrCr+bNgU7JnknY9DpuWlF6o31jWo6wrOSU3rciJs4sxQ0+M8dItaTrhhCgGsJzQ==;EndpointSuffix=core.windows.net
+  csv_file_pattern: ^VIRAT[_]S[_]\d{6}[_]\d{2}[_]\d{6}[_]\d{6}[_]\d{8}[\.]csv$
+  mp4_file_pattern: ^VIRAT[_]S[_]\d{6}[_]\d{2}[_]\d{6}[_]\d{6}[_]\d{8}[\.]mp4$
+  source_folder: C://Users/gauri/PycharmProjects/ComputerVisionAnalytics
+  video_container_name: videos
