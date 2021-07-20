@@ -40,5 +40,28 @@ Videos Counters
 
 This Project is a cloud based implementation of DataPipeline for an AI-based object detection and tracking framework for Video counters using Python, Deep Learning and OpenCV, by leveraging CCTV footage of a store.
 
+Data source : VIRAT Ground Dataset
+https://viratdata.org/
+Following are the steps involved in creating the Data Pipeline.
+
+1. Upload the video files to Azure Cloud
+2. Download the files to local temporary area
+3. Execute Yolo Object Detetction Algorithm
+4. Upload Annotated videos and files on Azure Blob Storage
+5. Trigger the Azure Data Factory Pipeline to save the annoated files data in Azure Cosmos DB
+
+Usage
+python AnalyticsPipeline.py
+
+Pre-requisite
+User should have Azure account
+
+Software details
+Programming Language :Python 3.9 
+NoSQL Database : Cosmos DB
+ETL Tool: Azure Data factory
+Scheduling : Trigger in Azure Data factory
+Overall Monitoring : Azure Montoring 
+
 
 
