@@ -207,49 +207,33 @@ def start_video(video_file):
     return annotation_list
 
 
-if __name__ == '__main__':
-    webcam = args.webcam
-    video_play = args.play_video
-    image = args.image
-    if webcam:
-        if args.verbose:
-            print('---- Starting Web Cam object detection ----')
-        webcam_detect()
-    if video_play:
-        video_path = args.video_path
+def runyolo():
+    print('--Start Time--  ' + str(datetime.datetime.now()))
+    # start_video(video_path)
+    video_files = get_files(path + "/downloads")
+    print(video_files)
+    print(f"Total no of videos to be processed {len(video_files)}")
+    for video_file in video_files:
+        print('Opening Video ' + video_file + " .... ")
 
-        if args.verbose:
-            print('--Start Time--  ' + str(datetime.datetime.now()))
-            # start_video(video_path)
-            video_files = get_files(path + "/downloads")
-            print(video_files)
-            print(f"Total no of videos to be processed {len(video_files)}")
-            for video_file in video_files:
-                print('Opening Video ' + video_file + " .... ")
+        df = pd.DataFrame(start_video(path + "/downloads/" + video_file),
+                          columns=['center_x', 'center_y', 'width', 'height', 'label', 'filename',
+                                   'current_time', 'videodate'])
+        ext = video_file.split(".")[1]
+        annotated_csv = video_file.replace(ext, "csv")
 
-                df = pd.DataFrame(start_video(path + "/downloads/" + video_file),
-                                  columns=['center_x', 'center_y', 'width', 'height', 'label', 'filename',
-                                           'current_time', 'videodate'])
-                ext = video_file.split(".")[1]
-                annotated_csv = video_file.replace(ext, "csv")
+        if os.path.exists(path + "/annotated_files/" + annotated_csv):
+            os.remove(path + "/annotated_files/" + annotated_csv)
 
-                if os.path.exists(path + "/annotated_files/" + annotated_csv):
-                    os.remove(path + "/annotated_files/" + annotated_csv)
+        df.to_csv(path + "/annotated_files/" + annotated_csv, index=False)
 
-                df.to_csv(path + "/annotated_files/" + annotated_csv, index=False)
+        if not df.empty:
+            f.write(annotated_csv + "\n")
 
-                if not df.empty:
-                    f.write(annotated_csv + "\n")
-
-                os.remove(path + "/downloads/" + video_file)
-                # type(df)
-                # print(df.head())
-            f.close()
-            print('--End Time-- ' + str(datetime.datetime.now()))
-    if image:
-        image_path = args.image_path
-        if args.verbose:
-            print("Opening " + image_path + " .... ")
-        image_detect(image_path)
+        os.remove(path + "/downloads/" + video_file)
+        # type(df)
+        # print(df.head())
+    f.close()
+    print('--End Time-- ' + str(datetime.datetime.now()))
 
     cv2.destroyAllWindows()

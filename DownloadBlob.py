@@ -12,28 +12,28 @@ def load_config():
         try:
             return yaml.load(yamlfile, Loader=yaml.FullLoader)
         except yaml.YAMLError as e:
-            print(e)
+            print(f"Error : {e}")
 
 
-config =load_config()
+# config =load_config()
 
-MY_CONNECTION_STRING = config[0]["azure_storage_connectionstring"]
+# MY_CONNECTION_STRING = config[0]["azure_storage_connectionstring"]
 
 # Replace with blob container name
-MY_BLOB_CONTAINER = config[0]["video_container_name"]
+# MY_BLOB_CONTAINER = config[0]["video_container_name"]
 
 # Replace with the local folder where you want downloaded files to be stored
-LOCAL_BLOB_PATH = config[0]["source_folder"] + "/downloads/"
+# LOCAL_BLOB_PATH = config[0]["source_folder"] + "/downloads/"
 
 
 class AzureBlobFileDownloader:
-    def __init__(self):
+    def __init__(self, MY_CONNECTION_STRING, MY_BLOB_CONTAINER, LOCAL_BLOB_PATH):
         print("Intializing AzureBlobFileDownloader")
 
         # Initialize the connection to Azure storage account
         self.blob_service_client = BlobServiceClient.from_connection_string(MY_CONNECTION_STRING)
         self.my_container = self.blob_service_client.get_container_client(MY_BLOB_CONTAINER)
-
+        self.LOCAL_BLOB_PATH = LOCAL_BLOB_PATH
 
     def download_all_blobs_in_container(self):
         # get a list of blobs
@@ -48,11 +48,11 @@ class AzureBlobFileDownloader:
 
     def save_blob_locally(self, blob):
         file_name = blob.name
-        print(file_name)
+        print(f"Filename : {file_name}")
         bytes = self.my_container.get_blob_client(blob).download_blob().readall()
 
         # Get full path to the file
-        download_file_path = os.path.join(LOCAL_BLOB_PATH, file_name)
+        download_file_path = os.path.join(self.LOCAL_BLOB_PATH, file_name)
         # for nested blobs, create local path as well!
         os.makedirs(os.path.dirname(download_file_path), exist_ok=True)
 
@@ -62,7 +62,7 @@ class AzureBlobFileDownloader:
 
 
 # Initialize class and upload files
-azure_blob_file_downloader = AzureBlobFileDownloader()
-azure_blob_file_downloader.download_all_blobs_in_container()
+#azure_blob_file_downloader = AzureBlobFileDownloader()
+#azure_blob_file_downloader.download_all_blobs_in_container()
 
-print("Download completed successfully")
+#print("Download completed successfully")

@@ -1,11 +1,11 @@
+
 import cv2 as cv
 import time
 import yaml
 import os
 
-
 def object_df(filename):
-    filename = 'C://Users/gauri/PycharmProjects/ComputerVisionAnalytics/videos/VIRAT_S_000207_00_000000_000045.viratdata.objects.txt'
+    #filename = 'C://Users/gauri/PycharmProjects/ComputerVisionAnalytics/videos/VIRAT_S_000207_00_000000_000045.viratdata.objects.txt'
     valdict = {}
     with open(filename) as f:
         contents = f.readlines()
@@ -116,7 +116,7 @@ def load_config():
         try:
             return yaml.load(yamlfile, Loader=yaml.FullLoader)
         except yaml.YAMLError as e:
-            print(e)
+            print(f"Error : {e}")
 
 
 if __name__ == '__main__':

@@ -12,7 +12,7 @@ def load_config():
         try:
             return yaml.load(yamlfile, Loader=yaml.FullLoader)
         except yaml.YAMLError as e:
-            print(e)
+            print(f"Error : {e}")
 
 
 def get_files(dir):
@@ -45,7 +45,7 @@ def upload(files, connection_string, container_name, filext):
 
     for file in files:
         total_files = total_files + 1
-        print(file.name)
+        print(f"{file.name}")
         if check_file(file.name,filext):
             blob_client = container_client.get_blob_client(file.name)
             with open(file.path, "rb") as data:
@@ -60,29 +60,15 @@ def upload(files, connection_string, container_name, filext):
     print(f"Total number of files uploaded on Blob Storage: {file_uploaded}")
 
 
-print(f"####File upload started at {datetime.datetime.now()}")
-print(
-    "------File Upload Service to Azure Blob Storage----- \n Filename pattern : VIRAT_S_XXYYZZ_KK_SSSSSS_TTTTTT_YYYYMMDD.mp4 \n XX: collection group ID \n YY: scene ID \n ""ZZ: sequence ID \n KK: segment ID (within sequence) \n SSSSSS: starting seconds in %06d format. E.g., ""1 min 2 sec is 000062. \n TTTTTT: ending seconds in %06d format \n YYYYMMDD: Date when video was recorded in ""YYYYMMDD format")
-config = load_config()
+#print(f"####File upload started at {datetime.datetime.now()}")
 
-filext = input("Enter File Type to upload (csv/mp4/avi):")
-subdir = input("Enter sub-dir name :")
-containername = input("Enter container name:")
-connection_string = config[0]["azure_storage_connectionstring"]
+#print(
+   # "------File Upload Service to Azure Blob Storage----- \n Filename pattern : VIRAT_S_XXYYZZ_KK_SSSSSS_TTTTTT_YYYYMMDD.mp4 \n XX: collection group ID \n YY: scene ID \n ""ZZ: sequence ID \n KK: segment ID (within sequence) \n SSSSSS: starting seconds in %06d format. E.g., ""1 min 2 sec is 000062. \n TTTTTT: ending seconds in %06d format \n YYYYMMDD: Date when video was recorded in ""YYYYMMDD format")
 
-if filext == "csv":
-    videos = get_files(config[0]["source_folder"]+"/"+subdir)
-    upload(videos, connection_string, containername,filext)
-elif filext == "mp4":
-    videos = get_files(config[0]["source_folder"] + "/" + subdir)
-    upload(videos, connection_string, containername, filext)
-elif filext == "avi":
-    videos = get_files(config[0]["source_folder"] + "/" + subdir)
-    upload(videos, connection_string, containername, filext)
-else:
-    print("not a valid extension !!")
+#config = load_config()
+#filext = input("Enter File Type to upload (csv/mp4/avi):")
+#subdir = input("Enter sub-dir name :")
+#containername = input("Enter container name:")
+#connection_string = config[0]["azure_storage_connectionstring"]
 
-
-
-
-print(f"####File upload completed at {datetime.datetime.now()}")
+#print(f"####File upload completed at {datetime.datetime.now()}")

@@ -10,27 +10,28 @@ def load_config():
         try:
             return yaml.load(yamlfile, Loader=yaml.FullLoader)
         except yaml.YAMLError as e:
-            print(e)
+
+            print(f"Failure: {e}")
 
 
-config = load_config()
+class addTimestamp:
 
-path1 = config[0]["source_folder"]+"/videos"
-path2 = config[0]["source_folder"]+"/targetvideos"
-for filename in os.listdir(path1):
-    filext = filename.split(".")[-1]
-    if filext == "mp4":
-        name = filename.replace('.mp4','')
-        date = datetime.now().strftime("%Y%m%d")
-        newfilename = name+"_"+date+".mp4"
-        print(f"{newfilename}")
-        p1 = pathlib.PureWindowsPath(path1)
-        p2 = pathlib.PureWindowsPath(path2)
+    def __init__(self, config):
+        self.config = config
 
-        cmd = f"copy {p1}\{filename} {p2}\{newfilename}"
-        print(f"Running ....{cmd}")
-        os.system(cmd)
+    def updatetimestamp(self):
+        path1 = self.config[0]["source_folder"] + "/videos"
+        path2 = self.config[0]["source_folder"] + "/targetvideos"
+        for filename in os.listdir(path1):
+            filext = filename.split(".")[-1]
+            if filext == "mp4":
+                name = filename.replace('.mp4', '')
+                date = datetime.now().strftime("%Y%m%d")
+                newfilename = name + "_" + date + ".mp4"
+                print(f"{newfilename}")
+                p1 = pathlib.PureWindowsPath(path1)
+                p2 = pathlib.PureWindowsPath(path2)
 
-
-
-
+                cmd = f"copy {p1}\{filename} {p2}\{newfilename}"
+                print(f"Running ....{cmd}")
+                os.system(cmd)
