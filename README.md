@@ -56,12 +56,13 @@ python AnalyticsPipeline.py
 Pre-requisite
 User should have Azure account
 
-Software details
-Programming Language :Python 3.9 
-NoSQL Database : Cosmos DB
+Software Used:
+Storage : Cosmos DB and Azure Blob Storage
 ETL Tool: Azure Data factory
 Scheduling : Trigger in Azure Data factory
 Overall Monitoring : Azure Montoring 
+
+![DataPipeline](https://user-images.githubusercontent.com/75573079/126571428-a29e3b2b-5604-483c-b6ac-c4d1fb42128b.PNG)
 
 
 
