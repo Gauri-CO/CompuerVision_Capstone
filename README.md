@@ -66,7 +66,7 @@ Software Used:\
 
 
 
-References Used:
+References Used: \
 https://docs.microsoft.com/en-us/azure/iot-central/retail/tutorial-video-analytics-create-app-yolo-v3 \
 https://affine.ai/in-store-traffic-analytics-retail-sensing-with-intelligent-object-detection/ \
 https://towardsdatascience.com/object-detection-using-yolov3-and-opencv-19ee0792a420 \
