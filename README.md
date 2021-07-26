@@ -62,18 +62,18 @@ Software Used:\
 -> Storage : Cosmos DB and Azure Blob Storage\
 -> ETL Tool: Azure Data factory\
 -> Scheduling : Trigger in Azure Data factory\
--> Overall Monitoring : Azure Montoring 
+-> Overall Monitoring : Azure Montoring \
 -> Monitoring Dashboard Link: \
 https://portal.azure.com/#@gauris08gmail.onmicrosoft.com/dashboard/arm/subscriptions/ed9adafd-e391-44da-9704-c3170c3decd7/resourceGroups/dashboards/providers/Microsoft.Portal/dashboards/6e20a63c-9464-4c05-a5ed-d8b066acec11 \
 
 ![DataPipeline](https://user-images.githubusercontent.com/75573079/126571428-a29e3b2b-5604-483c-b6ac-c4d1fb42128b.PNG)
 
 
-Dockerization Steps: \
-1. Create docker-build directory on your local system ans copy all the required files in this directory \
-2. Run below commands from cmd prompt from docker-build directory \
-   docker build --tag python-docker \
-   docker run -t -i python-docker \
+Dockerization Steps:
+1. Create docker-build directory on your local system ans copy all the required files in this directory
+2. Run below commands from cmd prompt from docker-build directory\
+   docker build --tag python-docker\
+   docker run -t -i python-docker
 
 References Used: \
 https://docs.microsoft.com/en-us/azure/iot-central/retail/tutorial-video-analytics-create-app-yolo-v3 \
