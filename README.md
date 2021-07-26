@@ -40,7 +40,8 @@ Videos Counters
 
 This Project is a cloud based implementation of DataPipeline for an AI-based object detection and tracking framework for Video counters using Python, Deep Learning and OpenCV, by leveraging CCTV footage of a store.
 
-Data source : VIRAT Ground Dataset
+**Data source**
+VIRAT Ground Dataset\
 https://viratdata.org/
 Following are the steps involved in creating the Data Pipeline.
 
@@ -69,11 +70,17 @@ https://portal.azure.com/#@gauris08gmail.onmicrosoft.com/dashboard/arm/subscript
 ![DataPipeline](https://user-images.githubusercontent.com/75573079/126571428-a29e3b2b-5604-483c-b6ac-c4d1fb42128b.PNG)
 
 
-Dockerization Steps:
+**Dockerization Steps**
 1. Create docker-build directory on your local system ans copy all the required files in this directory
 2. Run below commands from cmd prompt from docker-build directory\
    docker build --tag python-docker\
    docker run -t -i python-docker
+3. Push Docker Image to Docker Hub\
+   docker tag python-docker gauridocker08/mlanalytics:latest\
+   docker commit c3e8f559af17 gauridocker08/mlanalytics:lates\t
+   docker login -u "gauridocker08" -p "<>" docker.io\
+   docker push gauridocker08/mlanalytics:latest
+
 
 References Used: \
 https://docs.microsoft.com/en-us/azure/iot-central/retail/tutorial-video-analytics-create-app-yolo-v3 \
