@@ -56,10 +56,10 @@ python AnalyticsPipeline.py
 Pre-requisite
 User should have Azure account
 
-Software Used:
--> Storage : Cosmos DB and Azure Blob Storage
--> ETL Tool: Azure Data factory
--> Scheduling : Trigger in Azure Data factory
+Software Used:\
+-> Storage : Cosmos DB and Azure Blob Storage\
+-> ETL Tool: Azure Data factory\
+-> Scheduling : Trigger in Azure Data factory\
 -> Overall Monitoring : Azure Montoring 
 
 ![DataPipeline](https://user-images.githubusercontent.com/75573079/126571428-a29e3b2b-5604-483c-b6ac-c4d1fb42128b.PNG)
@@ -67,15 +67,15 @@ Software Used:
 
 
 References Used:
-https://docs.microsoft.com/en-us/azure/iot-central/retail/tutorial-video-analytics-create-app-yolo-v3
-https://affine.ai/in-store-traffic-analytics-retail-sensing-with-intelligent-object-detection/
-https://towardsdatascience.com/object-detection-using-yolov3-and-opencv-19ee0792a420--zuraiz
-https://towardsdatascience.com/object-detection-using-yolov3-on-colab-5d7d9eef02b3
-https://www.youtube.com/watch?v=enhJfb_6KYU
-https://docs.microsoft.com/en-us/azure/developer/python/sdk/storage/storage-blob-readme?view=storage-py-v12
-https://docs.microsoft.com/en-us/azure/cosmos-db/create-notebook-visualize-data 
-https://app.diagrams.net/#G1co7nBbhtr_6Lm8q1SKttKDXvoauMw6jf
-https://www.sqlshack.com/how-to-use-iterations-and-conditions-activities-in-azure-data-factory/
-https://www.youtube.com/watch?v=5-SRNiC_qOU
+https://docs.microsoft.com/en-us/azure/iot-central/retail/tutorial-video-analytics-create-app-yolo-v3 \
+https://affine.ai/in-store-traffic-analytics-retail-sensing-with-intelligent-object-detection/ \
+https://towardsdatascience.com/object-detection-using-yolov3-and-opencv-19ee0792a420 \
+https://towardsdatascience.com/object-detection-using-yolov3-on-colab-5d7d9eef02b3 \
+https://www.youtube.com/watch?v=enhJfb_6KYU \
+https://docs.microsoft.com/en-us/azure/developer/python/sdk/storage/storage-blob-readme?view=storage-py-v12 \
+https://docs.microsoft.com/en-us/azure/cosmos-db/create-notebook-visualize-data \
+https://app.diagrams.net/#G1co7nBbhtr_6Lm8q1SKttKDXvoauMw6jf \
+https://www.sqlshack.com/how-to-use-iterations-and-conditions-activities-in-azure-data-factory/ \
+https://www.youtube.com/watch?v=5-SRNiC_qOU \
 https://www.youtube.com/watch?v=UZiccUhvWKE
 
