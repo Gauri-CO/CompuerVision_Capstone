@@ -51,11 +51,11 @@ Following are the steps involved in creating the Data Pipeline.
 4. Upload Annotated videos and files on Azure Blob Storage
 5. Trigger the Azure Data Factory Pipeline to save the annoated files data in Azure Cosmos DB
 
-Usage
-python AnalyticsPipeline.py
 
 Pre-requisite
-User should have Azure account
+User should have Azure account with access to Azure Blob Storage
+
+Docker Image on Docker Hub: gauridocker08/mlpythonanalytics:latest
 
 Software Used:\
 -> Programming Language : Python 3.9 \
