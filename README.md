@@ -61,6 +61,7 @@ Software Used:\
 -> Programming Language : Python 3.9 \
 -> Docker version 20.10.07 \
 -> Storage : Cosmos DB and Azure Blob Storage\
+-> GCP Kubernetes Cluster\
 -> ETL Tool: Azure Data factory\
 -> Scheduling : Trigger in Azure Data factory\
 -> Overall Monitoring : Azure Montoring \
@@ -70,16 +71,7 @@ https://portal.azure.com/#@gauris08gmail.onmicrosoft.com/dashboard/arm/subscript
 ![DataPipeline](https://user-images.githubusercontent.com/75573079/126571428-a29e3b2b-5604-483c-b6ac-c4d1fb42128b.PNG)
 
 
-**Dockerization Steps**
-1. Create docker-build directory on your local system ans copy all the required files in this directory
-2. Run below commands from cmd prompt from docker-build directory\
-   docker build --tag python-docker\
-   docker run -t -i python-docker
-3. Push Docker Image to Docker Hub\
-   docker tag python-docker gauridocker08/mlanalytics:latest\
-   docker commit c3e8f559af17 gauridocker08/mlanalytics:lates\t
-   docker login -u "gauridocker08" -p "<>" docker.io\
-   docker push gauridocker08/mlanalytics:latest
+Complete solution is Containerised and Application is running on GCP (Gloogle Clould Platform) Kubernetes Cluster.
 
 
 References Used: \
