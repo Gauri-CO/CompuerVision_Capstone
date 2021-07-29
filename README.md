@@ -71,7 +71,7 @@ https://portal.azure.com/#@gauris08gmail.onmicrosoft.com/dashboard/arm/subscript
 ![DataPipeline](https://user-images.githubusercontent.com/75573079/126571428-a29e3b2b-5604-483c-b6ac-c4d1fb42128b.PNG)
 
 
-Complete solution is Containerised and Application is running on GCP (Gloogle Clould Platform) Kubernetes Cluster.
+**Complete solution is Containerised and Application is running on GCP (Gloogle Clould Platform) Kubernetes Cluster.**
 
 
 References Used: \
