@@ -34,7 +34,7 @@ COPY Upload.py Upload.py
 COPY DownloadBlob.py DownloadBlob.py
 COPY Yolo.py Yolo.py
 COPY AnalyticsPipeline.py AnalyticsPipeline.py
-COPY VIRAT* /usr/local/src/videos
+COPY VIRAT* /usr/local/src/videos/
 
 
 CMD [ "python", "./AnalyticsPipeline.py" ]
